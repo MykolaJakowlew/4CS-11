@@ -1,4 +1,44 @@
 nav {
   width: 30%;
   height: 100vh;
+  padding: 30px;
+  color: #aaa;
+  box-sizing: border-box;
+}
+.menu-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: black;
+}
+hr {
+  width: 35%;
+  margin: 25px 0;
+  color: rgb(255, 255, 229);
+}
+.menu-text-block {
+  font-size: 14px;
+  margin: 20px 0;
+  line-height: 145%;
+}
+
+.menu {
+  margin: 20px 0;
+  padding: 0;
+}
+
+.menu > li {
+  list-style-type: none;
+  text-transform: uppercase;
+  margin: 10px 0;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.35s;
+}
+
+.menu > li:hover {
+  color: black;
+}
+
+.menu > li.selected {
+  color: black;
 }

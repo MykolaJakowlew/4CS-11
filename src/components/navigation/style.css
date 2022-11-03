@@ -33,6 +33,7 @@ hr {
   font-size: 12px;
   cursor: pointer;
   transition: 0.35s;
+  font-weight: bold;
 }
 
 .menu > li:hover {
@@ -41,4 +42,22 @@ hr {
 
 .menu > li.selected {
   color: black;
+}
+
+.media-icons {
+  width: 60%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 10px;
+  margin: 10px 0;
+}
+
+.media-icons > img {
+  transition: 0.25s;
+  cursor: pointer;
+  opacity: 0.55;
+}
+
+.media-icons > img:hover {
+  opacity: 1;
 }

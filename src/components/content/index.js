@@ -2,9 +2,15 @@ import React, { useState } from "react";
 import './style.css';
 import Card from './card';
 import mockData from './mock/data.json';
+// import UUID from 'uuid';
+import { v4 as uuid } from 'uuid';
 
 function Content () {
-  const cards = mockData;
+  const cards = mockData.map(el => {
+    el.id = uuid();
+    // el.id = UUID.v4();
+    return el;
+  });
   const [tag, setTag] = useState();
   // setTag -- helper function to tell react that something was changed
   console.log('tag:', tag);
@@ -13,29 +19,39 @@ function Content () {
   if (tag) {
     classNames.push('show');
   }
+
+  const [selectedCard, setSelectedCard] = useState();
+  console.log('selectedCard:', selectedCard);
   return (
     <div className="content-container">
-      {/* { tag && <div className="selected-tag">{tag}</div>} */}
-      {/* <div
-        className="selected-tag"
-        style={{
-          display: tag ? 'block' : 'none'
-        }}
-      >{tag}</div> */}
       <div className={classNames.join(' ')}>{tag}</div>
       {cards
-        .filter(card => tag == null || card.tag === tag)
+        .filter(card => {
+          if (tag) {
+            return card.tag === tag;
+          }
+
+          if (selectedCard) {
+            return card.id === selectedCard.id;
+          }
+
+          return true;
+        })
         .map(card => <Card
+          id={card.id}
+          isArticleVisible={selectedCard && card.id === selectedCard.id}
           image={card.image}
           title={card.title}
           description={card.description}
           date={card.date}
           tag={card.tag}
+          fullPage={card.fullPage}
           setSelectedTag={setTag}
+          setSelectedCard={() => setSelectedCard(card)}
         />)}
       <div
         className="return-all-posts"
-        onClick={() => setTag()}
+        onClick={() => { setTag(); setSelectedCard(); }}
       >All posts</div>
     </div>
   );

@@ -1,16 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './style.css';
 import Card from './card';
 import mockData from './mock/data.json';
-// import UUID from 'uuid';
-import { v4 as uuid } from 'uuid';
+import { NavLink, useParams } from "react-router-dom";
+
 
 function Content () {
-  const cards = mockData.map(el => {
-    el.id = uuid();
-    // el.id = UUID.v4();
-    return el;
-  });
+  const cards = mockData;
   const [tag, setTag] = useState();
   // setTag -- helper function to tell react that something was changed
   console.log('tag:', tag);
@@ -22,6 +18,13 @@ function Content () {
 
   const [selectedCard, setSelectedCard] = useState();
   console.log('selectedCard:', selectedCard);
+
+  const { cardId } = useParams();
+  useEffect(() => {
+    setSelectedCard(
+      cards.find(card => card.id == cardId)
+    );
+  }, [cardId]);
   return (
     <div className="content-container">
       <div className={classNames.join(' ')}>{tag}</div>
@@ -37,22 +40,29 @@ function Content () {
 
           return true;
         })
-        .map(card => <Card
-          id={card.id}
-          isArticleVisible={selectedCard && card.id === selectedCard.id}
-          image={card.image}
-          title={card.title}
-          description={card.description}
-          date={card.date}
-          tag={card.tag}
-          fullPage={card.fullPage}
-          setSelectedTag={setTag}
-          setSelectedCard={() => setSelectedCard(card)}
-        />)}
-      <div
-        className="return-all-posts"
-        onClick={() => { setTag(); setSelectedCard(); }}
-      >All posts</div>
+        .map(card => {
+
+          return (
+            <NavLink to={`/card/${card.id}`}>
+              <Card
+                id={card.id}
+                isArticleVisible={selectedCard && card.id === selectedCard.id}
+                image={card.image}
+                title={card.title}
+                description={card.description}
+                date={card.date}
+                tag={card.tag}
+                fullPage={card.fullPage}
+                setSelectedTag={setTag}
+                setSelectedCard={() => setSelectedCard(card)}
+              /></NavLink>);
+        })}
+      <NavLink to='/'>
+        <div
+          className="return-all-posts"
+          onClick={() => { setTag(); setSelectedCard(); }}
+        >All posts</div>
+      </NavLink>
     </div>
   );
 }

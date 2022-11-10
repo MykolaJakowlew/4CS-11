@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from 'react-router-dom';
 import './style.css';
 import facebook from './imgs/5e4b1a8c95e491addf265a8e_social-03.svg';
 import instagram from './imgs/5e4b1a8c95e491834e265b00_social-07.svg';
@@ -16,9 +17,9 @@ function Navigation () {
    </div>
    <hr />
    <ul className="menu">
-    <li>home</li>
-    <li>about</li>
-    <li>contact</li>
+    <li><NavLink to='/'>home</NavLink></li>
+    <li><NavLink to="/about">about</NavLink></li>
+    <li><NavLink to="/contact">contact</NavLink></li>
    </ul>
    <hr />
    <div className="media-icons">

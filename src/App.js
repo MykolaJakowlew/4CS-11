@@ -1,8 +1,12 @@
 import './App.css';
-
+import MyCarousel from './components/carousel';
+import Navigation from './components/navigation';
 function App () {
   return (
-    <div className="App"></div>
+    <div className="App">
+      <Navigation />
+      <MyCarousel />
+    </div>
   );
 }
 

@@ -5,15 +5,15 @@ import './style.css';
 // https://www.npmjs.com/package/react-material-ui-carousel
 function MyCarousel () {
  const colors = [
-  'red', 'blue', 'green'
+  'red', 'blue', 'green', 'pink'
  ];
  return (
   <div className="carousel-wrap">
-   <Carousel height={'500px'} w>
+   <Carousel height={'500px'}>
     {
-     colors.map(e => (<div
+     colors.map(color => (<div
       style={{
-       backgroundColor: e
+       backgroundColor: color
       }}
       className="carousel-elem"></div>
      ))

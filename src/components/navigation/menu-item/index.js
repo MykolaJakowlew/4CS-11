@@ -12,7 +12,6 @@ function MenuItem (props) {
    {props.elem.text}
    {props.elem.items &&
     <div
-     style={{ display: show }}
      className={`menu-sub-items ${show ? 'show' : ''}`}>
      {props.elem.items
       .map(el => <div>{el.text}</div>)}

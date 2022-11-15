@@ -4,15 +4,22 @@ import MenuItem from "./menu-item";
 
 function Navigation () {
  const menu = [
-  {
-   text: 'homepage'
-  },
+  { text: 'homepage' },
   {
    text: 'pages',
    items: [
     { text: 'page 1' },
     { text: 'page 2' },
     { text: 'page 3' },
+   ]
+  },
+  {
+   text: 'menu item 3',
+   items: [
+    { text: 'page a' },
+    { text: 'page b' },
+    { text: 'page c' },
+    { text: 'page d' },
    ]
   }
  ];

@@ -1,5 +1,6 @@
 import React from "react";
 import './style.css';
+// https://openweathermap.org/
 import weatherMock from './weather.mock.json';
 
 function WeatherWidget (props) {

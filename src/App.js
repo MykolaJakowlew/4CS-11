@@ -1,11 +1,9 @@
 import './App.css';
-import MyCarousel from './components/carousel';
-import Navigation from './components/navigation';
+import WeatherWidget from './components/weatcher-widget';
 function App () {
   return (
     <div className="App">
-      <Navigation />
-      <MyCarousel />
+      <WeatherWidget />
     </div>
   );
 }

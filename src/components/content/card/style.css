@@ -1,0 +1,34 @@
+.card-init {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.card-appears-left {
+  animation: card-appears-left 1.25s forwards;
+}
+
+.card-appears-right {
+  animation: card-appears-right 1.25s forwards;
+}
+
+@keyframes card-appears-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes card-appears-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

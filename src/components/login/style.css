@@ -1,0 +1,17 @@
+.login-wrapper {
+  color: whitesmoke;
+  width: 25%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.login-wrapper > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-wrapper button {
+  width: 100%;
+}

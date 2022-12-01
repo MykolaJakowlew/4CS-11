@@ -1,0 +1,21 @@
+.products-wrapper {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 10px;
+  row-gap: 10px;
+  justify-items: center;
+}
+
+@media screen and (max-width: 800px) {
+  .products-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .products-wrapper {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}

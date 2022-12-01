@@ -6,6 +6,21 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.bg-main {
+  background-color: rgb(33, 33, 48);
+  color: whitesmoke;
+}
+
+.full-screen {
+  width: 100%;
+  height: 100vh;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

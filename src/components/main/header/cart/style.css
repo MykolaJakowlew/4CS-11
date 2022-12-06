@@ -1,0 +1,22 @@
+.cart {
+  width: 50px;
+  box-sizing: border-box;
+  aspect-ratio: 1/1;
+  background-color: rgb(53, 53, 78);
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  align-self: end;
+  position: relative;
+}
+
+.cart > img {
+  width: 100%;
+  margin: auto;
+}
+
+.cart .cart-counter {
+  position: absolute;
+  top: 70%;
+  left: 80%;
+}

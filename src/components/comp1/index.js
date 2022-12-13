@@ -1,12 +1,30 @@
 import React from "react";
-import Context1 from "../context1";
 import './style.css';
+import { useSelector, useDispatch } from 'react-redux';
+// import { actions } from '../../store';
+import { actions } from '../../store/counter_1.store';
 
 function Comp1 () {
  console.log('Comp1 re-render');
- const msg = React.useContext(Context1);
+ const counter = useSelector(state => state.counter_1);
+ const dispatch = useDispatch();
+
+ const increment = () => {
+  dispatch(actions.increment(5));
+ };
+
+ const decrement = () => {
+  dispatch(actions.decrement(5));
+ };
+
  return (
-  <div className="circle">Comp1<br /> msg:{msg}</div>
+  <div className="circle">
+   <div>
+    Counter value: {counter.value}<br />
+    <button onClick={increment}>Increment</button>
+    <button onClick={decrement}>Decrement</button>
+   </div>
+  </div>
  );
 }
 
